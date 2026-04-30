@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fazleelahhee.github.io/sitemap.xml

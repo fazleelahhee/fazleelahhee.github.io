@@ -53,17 +53,12 @@ try {
   });
   console.log('✓ First page screenshot → tmp-page1.png');
 
-  // Side-col specifically
-  const sideRect = await page.$eval('.side-col', el => {
-    const r = el.getBoundingClientRect();
-    return { x: r.x, y: r.y, w: r.width, h: r.height };
-  });
-  console.log('Side-col rect:', sideRect);
+  // Full page (longer)
   await page.screenshot({
-    path: path.join(root, 'tmp-side.png'),
-    clip: { x: Math.max(0, sideRect.x - 10), y: 0, width: sideRect.w + 20, height: 1123 },
+    path: path.join(root, 'tmp-full.png'),
+    fullPage: true,
   });
-  console.log('✓ Side-col screenshot → tmp-side.png');
+  console.log('✓ Full-page screenshot → tmp-full.png');
 } finally {
   await browser.close();
 }

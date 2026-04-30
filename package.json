@@ -5,7 +5,9 @@
   "type": "module",
   "description": "Personal portfolio and CV for Fazle Elahee.",
   "scripts": {
-    "build:pdf": "node scripts/build-cv-pdf.mjs"
+    "build:pdf": "node scripts/build-cv-pdf.mjs",
+    "build:og": "node scripts/build-og-image.mjs",
+    "build": "npm run build:og && npm run build:pdf"
   },
   "devDependencies": {
     "puppeteer": "^24.0.0"
