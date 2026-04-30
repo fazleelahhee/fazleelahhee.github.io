@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fazle Elahee — Senior Full-Stack Engineer & AI-First Developer</title>
+<meta name="description" content="Fazle Elahee — Senior Full-Stack Software Engineer & AI-first developer. 17+ years across Laravel, Vue/Nuxt 3, OpenAPI. Toptal-vetted. Zend-certified. Based in London.">
+<meta name="theme-color" content="#0b1326">
+<meta property="og:title" content="Fazle Elahee — Senior Full-Stack Engineer & AI-First Developer">
+<meta property="og:description" content="17+ years building scalable web platforms. Laravel · Nuxt 3 · OpenAPI · AI-native workflows.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Geist:wght@300..700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --surface:#0b1326;
+  --surface-deep:#060e20;
+  --surface-bright:#31394d;
+  --on-surface:#dae2fd;
+  --on-surface-dim:#a3a9c4;
+  --primary:#ffffff;
+  --secondary:#adc9eb;
+  --tertiary:#ffafd3;
+  --accent-mint:#5dd6a4;
+
+  --glow-blue:#1E3A8A;
+  --glow-purple:#7E22CE;
+  --glow-pink:#DB2777;
+
+  --glass:rgba(255,255,255,0.05);
+  --glass-strong:rgba(255,255,255,0.10);
+  --glass-border:rgba(255,255,255,0.14);
+  --glass-shine:rgba(255,255,255,0.22);
+
+  --serif:'Fraunces','Cormorant Garamond',Georgia,serif;
+  --sans:'Geist','Inter Tight',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{height:100%}
+body{
+  font-family:var(--sans);
+  background:var(--surface-deep);
+  color:var(--on-surface);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:rgba(255,175,211,0.4);color:#fff}
+
+/* ─── ATMOSPHERE ─────────────────────────────── */
+.atmosphere{
+  position:fixed;inset:0;z-index:-3;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 20% 8%, #142454 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 30%, #1a1741 0%, transparent 50%),
+    linear-gradient(180deg,#0b1326 0%,#060e20 100%);
+}
+.orb{
+  position:absolute;border-radius:50%;filter:blur(110px);
+  will-change:transform;mix-blend-mode:screen;
+}
+.orb-1{width:640px;height:640px;background:var(--glow-blue);
+  top:-12%;left:-10%;opacity:.55;
+  animation:drift1 28s ease-in-out infinite alternate;}
+.orb-2{width:520px;height:520px;background:var(--glow-purple);
+  top:24%;right:-12%;opacity:.45;
+  animation:drift2 34s ease-in-out infinite alternate;}
+.orb-3{width:480px;height:480px;background:var(--glow-pink);
+  bottom:-12%;left:32%;opacity:.32;
+  animation:drift3 30s ease-in-out infinite alternate;}
+.orb-4{width:360px;height:360px;background:#3b8cff;
+  top:60%;left:8%;opacity:.18;
+  animation:drift4 36s ease-in-out infinite alternate;}
+@keyframes drift1{to{transform:translate(90px,80px) scale(1.12)}}
+@keyframes drift2{to{transform:translate(-110px,90px) scale(.95)}}
+@keyframes drift3{to{transform:translate(50px,-130px) scale(1.08)}}
+@keyframes drift4{to{transform:translate(140px,-60px) scale(1.05)}}
+
+.grain{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.7'/></svg>");
+}
+.vignette{
+  position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,0.55) 100%);
+}
+
+/* ─── LAYOUT ─────────────────────────────────── */
+main{max-width:1180px;margin:0 auto;padding:48px 28px 96px}
+section{margin-top:120px;scroll-margin-top:40px}
+
+.eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--secondary);
+  display:inline-flex;align-items:center;gap:12px;
+}
+.eyebrow .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--accent-mint);
+  box-shadow:0 0 16px var(--accent-mint),0 0 4px var(--accent-mint);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.85)}}
+
+.section-head{
+  display:flex;flex-direction:column;gap:14px;margin-bottom:40px;
+}
+.section-head .num{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--on-surface-dim);
+}
+.section-head h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(38px,5.5vw,64px);
+  line-height:1;letter-spacing:-.035em;color:#fff;
+  font-variation-settings:"opsz" 144, "SOFT" 30;
+}
+.section-head h2 em{
+  font-style:italic;font-weight:300;color:var(--secondary);
+  font-variation-settings:"opsz" 144, "SOFT" 60;
+}
+
+/* ─── GLASS ──────────────────────────────────── */
+.glass{
+  position:relative;
+  background:var(--glass);
+  backdrop-filter:blur(28px) saturate(150%);
+  -webkit-backdrop-filter:blur(28px) saturate(150%);
+  border:1px solid var(--glass-border);
+  border-radius:24px;
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.28),
+    inset 0 1px 0 var(--glass-shine);
+}
+.glass::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.08) 0%,transparent 30%);
+}
+
+/* ─── HERO ───────────────────────────────────── */
+.hero{padding:56px 0 24px;position:relative}
+.hero > *{animation:rise 1s var(--ease) both}
+.hero > .eyebrow{animation-delay:.05s}
+.hero > h1{animation-delay:.18s}
+.hero > .role{animation-delay:.32s}
+.hero > .lede{animation-delay:.46s}
+.hero > .cta-row{animation-delay:.6s}
+.hero > .stats{animation-delay:.74s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+h1.name{
+  font-family:var(--serif);
+  font-size:clamp(64px,11vw,164px);
+  font-weight:400;line-height:.92;letter-spacing:-.045em;
+  color:#fff;
+  margin:30px 0 18px;
+  font-variation-settings:"opsz" 144,"SOFT" 30,"WONK" 0;
+  text-shadow:0 2px 30px rgba(0,0,0,.3);
+}
+h1.name em{
+  font-style:italic;font-weight:300;
+  color:var(--secondary);
+  font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1;
+}
+
+.role{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(22px,2.6vw,32px);line-height:1.35;letter-spacing:-.012em;
+  color:var(--on-surface);
+  max-width:780px;
+  font-variation-settings:"opsz" 96,"SOFT" 50;
+}
+.role b{
+  font-style:normal;font-weight:500;
+  background:linear-gradient(110deg,#fff 0%,#adc9eb 40%,#ffafd3 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  font-family:var(--serif);
+  font-variation-settings:"opsz" 96,"SOFT" 30;
+}
+
+.lede{
+  max-width:600px;margin-top:28px;
+  font-size:17px;line-height:1.65;color:var(--on-surface-dim);
+  font-weight:300;
+}
+
+.cta-row{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  height:50px;padding:0 26px;border-radius:999px;
+  font-family:var(--mono);font-size:11.5px;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+  transition:all .35s var(--ease);border:1px solid transparent;
+  cursor:pointer;
+}
+.btn-primary{background:#fff;color:#0b1326}
+.btn-primary:hover{
+  background:#e2e2e2;transform:translateY(-2px);
+  box-shadow:0 14px 40px rgba(255,255,255,.18);
+}
+.btn-ghost{
+  background:rgba(255,255,255,.05);color:#fff;
+  border-color:rgba(255,255,255,.18);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.btn-ghost:hover{
+  background:rgba(255,255,255,.12);transform:translateY(-2px);
+  border-color:rgba(255,255,255,.32);
+}
+.btn .arrow{font-size:14px;transition:transform .3s var(--ease)}
+.btn:hover .arrow{transform:translate(3px,-3px)}
+.btn:hover .arrow.down{transform:translate(0,3px)}
+
+/* stats strip */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  margin-top:64px;border-radius:24px;overflow:hidden;
+  border:1px solid var(--glass-border);
+  background:rgba(11,19,38,.4);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  box-shadow:0 8px 40px rgba(0,0,0,.28),inset 0 1px 0 var(--glass-shine);
+}
+.stat{
+  padding:30px 26px;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.stat:last-child{border-right:none}
+.stat .value{
+  font-family:var(--serif);font-size:clamp(30px,3.5vw,42px);
+  font-weight:400;color:#fff;line-height:1;letter-spacing:-.025em;
+  font-variation-settings:"opsz" 96;
+}
+.stat .value em{font-style:italic;color:var(--secondary);font-weight:300}
+.stat .label{
+  font-family:var(--mono);font-size:10.5px;font-weight:500;
+  text-transform:uppercase;letter-spacing:.18em;
+  color:var(--on-surface-dim);margin-top:10px;
+}
+
+/* ─── ABOUT ──────────────────────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.about-block{padding:40px 36px}
+.about-block p{
+  font-size:17.5px;line-height:1.7;color:var(--on-surface);
+  font-weight:300;
+}
+.about-block p + p{margin-top:18px}
+.about-block strong{color:#fff;font-weight:500}
+
+/* ─── SKILLS ─────────────────────────────────── */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill-group{padding:32px 30px}
+.skill-group h3{
+  font-family:var(--mono);font-size:10.5px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--secondary);margin-bottom:18px;
+}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  padding:9px 14px;border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:13px;color:#fff;font-weight:400;
+  transition:all .3s var(--ease);cursor:default;
+}
+.pill:hover{
+  background:rgba(255,255,255,.12);transform:translateY(-2px);
+  border-color:rgba(255,255,255,.28);
+}
+.pill.featured{
+  background:linear-gradient(120deg,rgba(173,201,235,.18),rgba(255,175,211,.16));
+  border-color:rgba(255,255,255,.32);
+  color:#fff;font-weight:500;
+}
+.pill.featured:hover{
+  background:linear-gradient(120deg,rgba(173,201,235,.3),rgba(255,175,211,.26));
+}
+
+/* ─── EXPERIENCE ─────────────────────────────── */
+.timeline{display:grid;gap:14px}
+.job{
+  padding:32px 36px;
+  display:grid;grid-template-columns:200px 1fr;gap:36px;
+  transition:all .4s var(--ease);
+}
+.job:hover{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.22);
+  box-shadow:0 14px 50px rgba(0,0,0,.32),inset 0 1px 0 var(--glass-shine);
+}
+.job-meta{display:flex;flex-direction:column;gap:6px}
+.dates{
+  font-family:var(--mono);font-size:11px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--secondary);
+}
+.location{
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  color:var(--on-surface-dim);letter-spacing:.06em;
+}
+.job h3{
+  font-family:var(--serif);font-size:24px;font-weight:400;
+  line-height:1.25;letter-spacing:-.015em;color:#fff;
+  margin-bottom:14px;
+  font-variation-settings:"opsz" 96;
+}
+.job h3 .company{
+  display:block;font-style:italic;font-weight:300;
+  color:var(--secondary);font-size:17px;letter-spacing:.005em;
+  margin-top:2px;
+  font-variation-settings:"opsz" 72,"SOFT" 60;
+}
+.job ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.job li{
+  position:relative;padding-left:22px;
+  font-size:15.5px;line-height:1.55;color:var(--on-surface);
+  font-weight:300;
+}
+.job li::before{
+  content:"";position:absolute;left:6px;top:11px;
+  width:5px;height:5px;border-radius:50%;
+  background:var(--secondary);
+  box-shadow:0 0 8px var(--secondary);
+}
+.job li strong{color:#fff;font-weight:500}
+.stack-line{
+  margin-top:18px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-family:var(--mono);font-size:11px;font-weight:400;
+  color:var(--on-surface-dim);letter-spacing:.04em;line-height:1.7;
+}
+
+/* ─── OPEN SOURCE ────────────────────────────── */
+.oss-card{
+  padding:40px 40px 36px;display:grid;
+  grid-template-columns:1fr auto;gap:32px;
+  align-items:start;
+  transition:all .4s var(--ease);
+  position:relative;overflow:hidden;
+}
+.oss-card::after{
+  content:"";position:absolute;
+  top:-40%;right:-10%;width:380px;height:380px;
+  background:radial-gradient(circle,rgba(173,201,235,.18) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.oss-card > *{position:relative;z-index:1}
+.oss-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,.24);
+  box-shadow:0 20px 60px rgba(0,0,0,.36),inset 0 1px 0 var(--glass-shine);
+}
+.oss-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--secondary);margin-bottom:16px;
+}
+.oss-eyebrow .dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent-mint);box-shadow:0 0 12px var(--accent-mint);
+}
+.oss-card h3{
+  font-family:var(--serif);font-size:clamp(28px,3.6vw,44px);
+  font-weight:400;line-height:1.05;letter-spacing:-.03em;
+  color:#fff;margin-bottom:14px;
+  font-variation-settings:"opsz" 144,"SOFT" 30;
+}
+.oss-card h3 em{
+  font-style:italic;font-weight:300;color:var(--secondary);
+  font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1;
+}
+.oss-tagline{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:18px;line-height:1.45;color:var(--on-surface);
+  max-width:560px;margin-bottom:22px;
+  font-variation-settings:"opsz" 72,"SOFT" 50;
+}
+.oss-desc{
+  font-size:15.5px;line-height:1.7;color:var(--on-surface-dim);
+  max-width:580px;font-weight:300;margin-bottom:24px;
+}
+.oss-meta{
+  display:flex;flex-direction:column;gap:14px;align-items:flex-end;
+  min-width:180px;
+}
+.oss-stat{
+  font-family:var(--mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--on-surface-dim);
+  display:flex;align-items:center;gap:8px;
+}
+.oss-stat .num-val{
+  font-family:var(--serif);font-size:18px;letter-spacing:-.01em;
+  color:#fff;font-weight:400;text-transform:none;
+}
+.oss-topics{
+  display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;
+}
+.oss-topic{
+  font-family:var(--mono);font-size:10.5px;font-weight:500;
+  padding:5px 10px;border-radius:999px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);
+  color:var(--on-surface-dim);letter-spacing:.04em;
+}
+.oss-actions{
+  display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;
+}
+@media (max-width:880px){
+  .oss-card{grid-template-columns:1fr;padding:30px 26px}
+  .oss-meta{align-items:flex-start}
+}
+
+/* ─── CREDENTIALS ────────────────────────────── */
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cred{padding:32px 30px}
+.cred-eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--secondary);margin-bottom:14px;
+}
+.cred h3{
+  font-family:var(--serif);font-size:22px;font-weight:400;
+  letter-spacing:-.015em;color:#fff;margin-bottom:6px;
+  font-variation-settings:"opsz" 72;
+}
+.cred p{color:var(--on-surface-dim);font-size:14.5px;font-weight:300}
+
+/* ─── CONTACT ────────────────────────────────── */
+.contact{
+  padding:80px 48px;text-align:center;
+  background:rgba(255,255,255,.06);
+}
+.contact .num{justify-content:center}
+.contact-head{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--on-surface-dim);margin-bottom:24px;
+}
+.contact h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(48px,8vw,108px);
+  line-height:1;letter-spacing:-.045em;color:#fff;
+  font-variation-settings:"opsz" 144,"SOFT" 30;
+}
+.contact h2 em{
+  font-style:italic;font-weight:300;color:var(--secondary);
+  font-variation-settings:"opsz" 144,"SOFT" 60,"WONK" 1;
+}
+.contact-lede{
+  max-width:560px;margin:28px auto 0;
+  font-size:17px;color:var(--on-surface-dim);font-weight:300;line-height:1.65;
+}
+.socials{
+  display:flex;gap:24px;justify-content:center;
+  margin-top:36px;flex-wrap:wrap;
+}
+.social{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--on-surface-dim);text-decoration:none;
+  padding:10px 0;border-bottom:1px solid transparent;
+  transition:all .3s var(--ease);
+}
+.social:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+
+/* ─── FOOTER ─────────────────────────────────── */
+footer{
+  margin-top:96px;padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--on-surface-dim);
+  flex-wrap:wrap;gap:16px;
+}
+
+/* ─── REVEAL ─────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width:880px){
+  main{padding:32px 20px 64px}
+  section{margin-top:88px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .stat:nth-child(odd){border-right:1px solid rgba(255,255,255,.08)}
+  .stat:nth-last-child(-n+2){border-bottom:none}
+  .about-grid,.skill-grid,.cred-grid{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:16px;padding:28px 24px}
+  .job-meta{flex-direction:row;flex-wrap:wrap;gap:14px;align-items:center}
+  .about-block{padding:32px 26px}
+  .skill-group{padding:26px 24px}
+  .contact{padding:56px 28px}
+  footer{flex-direction:column;text-align:center}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001s !important;
+    transition-duration:.001s !important;
+    animation-iteration-count:1 !important;
+  }
+  .orb{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="atmosphere">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+<div class="vignette"></div>
+<div class="grain"></div>
+
+<main>
+  <!-- ─── HERO ─────────────────────────────────── -->
+  <header class="hero">
+    <span class="eyebrow"><span class="dot"></span>London · Available for select engagements</span>
+    <h1 class="name">Fazle <em>Elahee</em></h1>
+    <p class="role">Senior Full-Stack Engineer &amp; <b>AI-first developer</b> — shipping production code with Laravel, Nuxt 3 &amp; coding agents.</p>
+    <p class="lede">Seventeen years building scalable web platforms for startups, agencies and enterprises — PSA Group, Sodexo, Riskhub. Toptal-vetted top 3 %. Zend Certified. Currently turning legacy monoliths into AI-native, contract-first systems.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="Fazle-Elahee-CV.pdf" download>Download CV<span class="arrow down">↓</span></a>
+      <a class="btn btn-ghost" href="mailto:fazle.elahee@gmail.com">Get in touch<span class="arrow">↗</span></a>
+      <a class="btn btn-ghost" href="https://github.com/fazleelahhee" target="_blank" rel="noopener">GitHub<span class="arrow">↗</span></a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="value">17<em>+</em></div><div class="label">Years shipping</div></div>
+      <div class="stat"><div class="value">Top <em>3%</em></div><div class="label">Toptal vetted</div></div>
+      <div class="stat"><div class="value">Zend</div><div class="label">Certified PHP Engineer</div></div>
+      <div class="stat"><div class="value"><em>AI</em>-first</div><div class="label">Workflow &amp; tooling</div></div>
+    </div>
+  </header>
+
+  <!-- ─── ABOUT ────────────────────────────────── -->
+  <section class="about reveal" id="about">
+    <div class="section-head">
+      <span class="num">01 — Profile</span>
+      <h2>Engineer at the <em>seam</em><br>of code &amp; agents.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-block glass">
+        <p>I build scalable web applications across <strong>PHP / Laravel</strong> and <strong>Vue / Nuxt 3</strong> — modernising legacy codebases, designing OpenAPI-first systems, and shipping role-based access controls without breaking production.</p>
+        <p>Recent work pairs classical full-stack engineering with AI-native workflows: coding agents, autogenerated SDKs, contract-first APIs that double as machine-readable specs, and prompt-aware code review.</p>
+      </div>
+      <div class="about-block glass">
+        <p>Equally comfortable on contract or permanent engagements, in agile teams of two or twenty. I move fast on greenfield work and methodically on rescue jobs — the codebases nobody else wants to touch.</p>
+        <p>Currently shipping at <strong>Sonin App Development</strong>, building an enterprise compliance platform on a Laravel + Nuxt 3 monorepo with full RBAC and SSR-safe frontends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ───────────────────────────────── -->
+  <section class="skills reveal" id="stack">
+    <div class="section-head">
+      <span class="num">02 — Stack</span>
+      <h2>Tools I <em>reach for</em>.</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-group glass">
+        <h3>Backend</h3>
+        <div class="pills">
+          <span class="pill">PHP 7 / 8</span>
+          <span class="pill">Laravel</span>
+          <span class="pill">Symfony</span>
+          <span class="pill">Zend Framework</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">OpenAPI</span>
+          <span class="pill">Pest / PHPUnit</span>
+          <span class="pill">Behat</span>
+        </div>
+      </div>
+
+      <div class="skill-group glass">
+        <h3>Frontend</h3>
+        <div class="pills">
+          <span class="pill">Vue 2 / 3</span>
+          <span class="pill">Nuxt 3</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">React / React Native</span>
+          <span class="pill">HTML5 / CSS3</span>
+          <span class="pill">jQuery</span>
+        </div>
+      </div>
+
+      <div class="skill-group glass">
+        <h3>AI &amp; modern workflow</h3>
+        <div class="pills">
+          <span class="pill featured">Claude Code</span>
+          <span class="pill featured">Coding agents</span>
+          <span class="pill featured">Prompt engineering</span>
+          <span class="pill featured">LLM-augmented review</span>
+          <span class="pill featured">Spec-driven dev</span>
+          <span class="pill featured">SDK auto-gen</span>
+        </div>
+      </div>
+
+      <div class="skill-group glass">
+        <h3>DevOps · Data · CMS</h3>
+        <div class="pills">
+          <span class="pill">Docker</span>
+          <span class="pill">Linux</span>
+          <span class="pill">Nginx</span>
+          <span class="pill">Apache</span>
+          <span class="pill">CI / CD</span>
+          <span class="pill">Vagrant</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">Oracle</span>
+          <span class="pill">Git · Monorepo</span>
+          <span class="pill">WordPress</span>
+          <span class="pill">Magento</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── OPEN SOURCE ──────────────────────────── -->
+  <section class="opensource reveal" id="opensource">
+    <div class="section-head">
+      <span class="num">03 — Open source</span>
+      <h2>Code, <em>shared</em>.</h2>
+    </div>
+    <article class="oss-card glass">
+      <div>
+        <div class="oss-eyebrow"><span class="dot"></span>Active · MIT licensed</div>
+        <h3>code-context-engine <em>↗</em></h3>
+        <p class="oss-tagline">Claude re-reads your code every session. Make it stop.</p>
+        <p class="oss-desc">A local MCP server that gives Claude Code persistent project context — AST indexing, hybrid keyword + semantic vector search, and cross-session memory. Cuts repeat-read tokens by <strong style="color:#fff;font-weight:500">70 %+</strong>, runs entirely on your machine over SQLite.</p>
+        <div class="oss-actions">
+          <a class="btn btn-primary" href="https://github.com/elara-labs/code-context-engine" target="_blank" rel="noopener">View on GitHub<span class="arrow">↗</span></a>
+          <a class="btn btn-ghost" href="https://elara-labs.github.io/code-context-engine/" target="_blank" rel="noopener">Documentation<span class="arrow">↗</span></a>
+        </div>
+      </div>
+      <div class="oss-meta">
+        <div class="oss-stat"><span class="num-val">Python</span></div>
+        <div class="oss-stat"><span class="num-val">MCP</span> · server</div>
+        <div class="oss-stat"><span class="num-val">SQLite</span> · vector</div>
+        <div class="oss-topics">
+          <span class="oss-topic">claude-code</span>
+          <span class="oss-topic">mcp</span>
+          <span class="oss-topic">ast</span>
+          <span class="oss-topic">semantic-search</span>
+          <span class="oss-topic">token-optimization</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ─── EXPERIENCE ───────────────────────────── -->
+  <section class="experience reveal" id="experience">
+    <div class="section-head">
+      <span class="num">04 — Experience</span>
+      <h2>Selected <em>work</em>.</h2>
+    </div>
+    <div class="timeline">
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">Feb 2026 — Present</span>
+          <span class="location">Reigate · Remote · Contract</span>
+        </div>
+        <div>
+          <h3>Full-Stack Developer<span class="company">Sonin App Development</span></h3>
+          <ul>
+            <li>Building an enterprise-grade <strong>ISS Compliance</strong> management platform on a Laravel API + Nuxt 3 monorepo.</li>
+            <li>Designed and shipped <strong>RBAC</strong> with granular permissions across both backend and frontend layers.</li>
+            <li>Containerised RESTful APIs via Docker; SSR-safe dynamic Nuxt 3 frontends.</li>
+            <li>Authored a reusable component library for UI consistency and delivery speed.</li>
+          </ul>
+          <div class="stack-line">Laravel · Nuxt 3 · TypeScript · Docker · MySQL · REST APIs</div>
+        </div>
+      </article>
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">Nov 2022 — Sept 2025</span>
+          <span class="location">London · Hybrid · Full-time</span>
+        </div>
+        <div>
+          <h3>Software Engineer<span class="company">Riskhub Ltd</span></h3>
+          <ul>
+            <li>Lead developer on key product features across <strong>Laravel, Vue 2 / 3, Nuxt</strong> and TypeScript.</li>
+            <li>Modernised a 10+ year-old <strong>Zend Framework 2</strong> codebase to Laravel without downtime.</li>
+            <li>Designed <strong>OpenAPI</strong>-first APIs enabling contract-first development across teams.</li>
+            <li>Auto-generated JS &amp; PHP SDKs from specs — eliminating client / server drift.</li>
+            <li>Hardened quality with unit tests, Behat BDD, and spec validation.</li>
+          </ul>
+          <div class="stack-line">Laravel · ZF2 · Vue 2 / 3 · Nuxt · TypeScript · OpenAPI</div>
+        </div>
+      </article>
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">Apr 2022 — Oct 2023</span>
+          <span class="location">Oxford · Contract</span>
+        </div>
+        <div>
+          <h3>Full-Stack Developer<span class="company">Aris Technologies Ltd</span></h3>
+          <ul>
+            <li>Built platform features for an <strong>eGaming &amp; social gaming</strong> product, lifting player engagement.</li>
+            <li>Code review, bug-bashing and test-coverage improvements across the codebase.</li>
+          </ul>
+          <div class="stack-line">Laravel · WordPress · Vue.js</div>
+        </div>
+      </article>
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">Aug 2018 — Dec 2021</span>
+          <span class="location">Reigate · Full-time</span>
+        </div>
+        <div>
+          <h3>Web Developer<span class="company">Sonin App Development</span></h3>
+          <ul>
+            <li>End-to-end web &amp; mobile delivery for <strong>high-profile agency clients</strong>.</li>
+            <li>Laravel back-ends, third-party API integrations, Vue / React / React Native frontends.</li>
+            <li>Hit milestones on technically demanding projects with tight deadlines.</li>
+          </ul>
+          <div class="stack-line">Laravel · Vue · React · React Native · AngularJS · WordPress · jQuery · Vagrant</div>
+        </div>
+      </article>
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">Jun 2017 — Mar 2018</span>
+          <span class="location">Coventry · On-site · Contract</span>
+        </div>
+        <div>
+          <h3>PHP Developer<span class="company">PSA Group · Peugeot / Citroën</span></h3>
+          <ul>
+            <li>Built internal apps at the UK HQ for in-house teams &amp; a <strong>nationwide dealer network</strong>.</li>
+            <li>Led the Customer Incentive Web Application managing dealer promotional campaigns.</li>
+          </ul>
+          <div class="stack-line">Laravel 5.4 / 5.5 · Vue · JavaScript · Apache · Vagrant · Linux</div>
+        </div>
+      </article>
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">Oct 2016 — Feb 2017</span>
+          <span class="location">Milton Keynes · On-site · Contract</span>
+        </div>
+        <div>
+          <h3>PHP Developer<span class="company">Sodexo · p&amp;mm employee benefits</span></h3>
+          <ul>
+            <li>Migrated legacy <strong>.NET applications to Laravel</strong> at the global facility-management firm's UK HQ.</li>
+            <li>Integrated with Oracle via OCI8, ensuring data continuity through the platform transition.</li>
+          </ul>
+          <div class="stack-line">Laravel 5.2 · Oracle OCI8 · Apache · Nginx</div>
+        </div>
+      </article>
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">Mar 2014 — Feb 2017</span>
+          <span class="location">Remote · Freelance</span>
+        </div>
+        <div>
+          <h3>Senior PHP Developer<span class="company">Toptal</span></h3>
+          <ul>
+            <li>Accepted into Toptal's exclusive network — <strong>top 3 %</strong> of global freelance developers.</li>
+            <li>Delivered Laravel projects to international clients with high quality bars.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job glass">
+        <div class="job-meta">
+          <span class="dates">2011 — 2014</span>
+          <span class="location">London · Various agencies</span>
+        </div>
+        <div>
+          <h3>PHP Developer<span class="company">Datravel · Bondmedia · Tourconstructor · Kreative Charge</span></h3>
+          <ul>
+            <li><strong>Datravel:</strong> hotel booking + air ticket platform with custom CRM and 3rd-party API integrations.</li>
+            <li><strong>Bondmedia:</strong> WordPress &amp; Magento plugins, themes and extensions; Linux server administration.</li>
+            <li><strong>Tourconstructor:</strong> travel-agency platform serving the Russian market.</li>
+          </ul>
+          <div class="stack-line">Laravel · WordPress · Magento · MySQL · Linux · 3rd-party APIs</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ─── EDUCATION & CERTS ────────────────────── -->
+  <section class="credentials reveal" id="credentials">
+    <div class="section-head">
+      <span class="num">05 — Credentials</span>
+      <h2>Education &amp; <em>certs</em>.</h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred glass">
+        <div class="cred-eyebrow">2007</div>
+        <h3>BSc (Eng) Internet Technology</h3>
+        <p>University of Portsmouth</p>
+      </div>
+      <div class="cred glass">
+        <div class="cred-eyebrow">June 2013</div>
+        <h3>Zend Certified PHP Engineer</h3>
+        <p>Perforce Zend · Credential ID 258049700</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ──────────────────────────────── -->
+  <section class="contact glass reveal" id="contact">
+    <div class="contact-head">06 — Contact</div>
+    <h2>Let's build<br>something <em>good</em>.</h2>
+    <p class="contact-lede">Open to senior contract and permanent roles in London or remote (UK time-zone). I reply within 24 hours.</p>
+    <div class="cta-row" style="justify-content:center;margin-top:36px">
+      <a class="btn btn-primary" href="mailto:fazle.elahee@gmail.com">fazle.elahee@gmail.com</a>
+      <a class="btn btn-ghost" href="tel:+447415352423">+44 7415 352 423</a>
+    </div>
+    <div class="socials">
+      <a class="social" href="https://github.com/fazleelahhee" target="_blank" rel="noopener">GitHub</a>
+      <a class="social" href="https://www.linkedin.com/in/fazle-elahee" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social" href="https://stackoverflow.com/users/story/fazle-elahee" target="_blank" rel="noopener">Stack Overflow</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Fazle Elahee</span>
+    <span>Built in London · Crafted with code &amp; agents</span>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+
+</body>
+</html>
