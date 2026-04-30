@@ -1,0 +1,13 @@
+{
+  "name": "fazleelahhee-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal portfolio and CV for Fazle Elahee.",
+  "scripts": {
+    "build:pdf": "node scripts/build-cv-pdf.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}
